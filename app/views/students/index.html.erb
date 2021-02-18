@@ -1,7 +1,9 @@
 <div class="container py-5">
   <h3>Students</h3>
-  <%= link_to "+ Register A Student", new_student_path %><br>
-  <%= link_to "Sort Student", sort_students_path %><br>
+  <div id="outer">
+    <div class="inner"><%= link_to "Register A Student", new_student_path %></div>
+    <div class="inner"><%= link_to "Sort Student", sort_students_path %></div>
+  </div>
   <% if @students.empty? %>
   <p>No Students Found</p>
   <% else %>
