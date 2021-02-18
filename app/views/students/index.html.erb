@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <h3>Students</h3>
+  <%= link_to "+ Register A Student", new_student_path %><br>
+  <%= link_to "Sort Student", sort_students_path %><br>
+  <% if @students.empty? %>
+  <p>No Students Found</p>
+  <% else %>
+    <ul class="list-group my-5">
+      <% @students.each do |student| %>
+        <div>
+          <a href="<%= student_path(student) %>" class="list-group-item list-group-item-action">
+            <%= student.first_name %>
+          </a>
+          <%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-sm btn-danger', id: 'delete_company' %>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

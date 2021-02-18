@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <h3>Students</h3>
+  <% if @students.empty? %>
+  <p>No Students Found</p>
+  <% else %>
+    <ul class="list-group my-5">
+      <% @students.each do |student| %>
+        <div>
+          <a href="<%= student_path(student) %>" class="list-group-item list-group-item-action">
+            <%= student.first_name %>
+          </a>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
